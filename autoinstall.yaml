@@ -1,0 +1,36 @@
+# Arquivo de instalação automática do Ubuntu, Linux Mint, Linux Lite
+autoinstall:
+  version: 1
+  identity:
+    hostname: meu-linux
+    username: usuario
+    password: "$6$hashed_password"  # Substituir pela senha gerada em SHA512
+  keyboard:
+    layout: br
+  locale: pt_BR.UTF-8
+  storage:
+    layout: lvm
+  network:
+    ethernets:
+      ens33:
+        dhcp4: true
+  packages:
+    - firefox
+    - google-chrome-stable
+    - vlc
+    - ubuntu-restricted-extras
+    - libavcodec-extra
+    - gstreamer1.0-plugins-bad
+    - gstreamer1.0-plugins-ugly
+    - minetest
+    - snapd
+    - flatpak
+    - gparted
+    - htop
+    - neofetch
+    - timeshift
+    - synaptic
+  late-commands:
+    - curtin in-target -- apt update && apt upgrade -y
+    - curtin in-target -- apt autoremove -y
+    - curtin in-target -- apt autoclean -y
