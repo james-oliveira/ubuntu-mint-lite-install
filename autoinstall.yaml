@@ -2,9 +2,9 @@
 autoinstall:
   version: 1
   identity:
-    hostname: meu-linux
-    username: usuario
-    password: "$6$hashed_password"  # Substituir pela senha gerada em SHA512
+    hostname: james-linux #seu nome
+    username: james #user
+    password: "1234"  #Senha, né pai
   keyboard:
     layout: br
   locale: pt_BR.UTF-8
